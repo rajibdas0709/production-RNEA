@@ -22,7 +22,13 @@ app.use(morgan('dev'));
 // Routes
 app.use('/api/v1/auth', require('./routes/userRoute'));
 app.use('/api/v1/order', require('./routes/ordersRoute'));
-
+//Welcome Route
+app.get("/",(req,res)=>{
+  res.status(200).send({
+    "Success":true,
+    "message":"Node Server Running",
+  });
+});
 // Port
 const port = process.env.PORT || 7070;
 
